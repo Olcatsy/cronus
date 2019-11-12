@@ -1,0 +1,370 @@
+/*********
+** MAIN **
+*********/
+main h2 {
+    margin-bottom: 10px;
+}
+
+main h3 {
+    margin-bottom: 25px;
+}
+
+section {
+    padding: 100px 0;
+}
+
+
+
+/* FEATURED */
+.featured {
+    background: $primaryColor;
+    text-align: center;
+    padding-bottom: 250px;
+
+    & h2 {
+        color: $primaryWhite;
+
+        &:before {
+            @include verticalDash($primaryWhite);
+        }
+    }
+
+    & h4 {
+        margin: 30px auto;
+    }
+
+    & .flex-parent {
+        @include flex(space-evenly, flex-start);
+        margin-top: 80px;
+    }
+
+    &-item {
+        width: calc(33% - 4%);
+        margin: 2%;
+    }
+
+    &-icon {
+        margin: 0 auto;
+    }
+}
+
+    // FEATURED MEDIA QUERIES
+    @include max-width($tablet-large) {
+        
+    }
+
+    @include max-width($tablet-small) {
+
+    }
+
+    @include max-width($mobile) {
+        .featured {
+            padding-bottom: 100px;
+
+            & .flex-parent {
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            &-item {
+                width: 80%;
+                margin: 10% auto;
+            }
+        }
+    }
+    // End of FEATURED MEDIA QUERIES
+/* END OF FEATURED */
+
+/* MISSION */
+.mission {
+
+    & h2 {
+        margin-top: 80px;
+
+        &::before {
+            @include verticalDash($primaryBlack);
+        }
+    }
+
+    & .inner-wrapper {
+        /* places the image/video between two sections */
+        margin-top: -25%;
+    }
+
+    & img {
+        box-shadow: 0 0 45px #444;
+    }
+    
+    & p {
+        text-align: justify;
+    }
+
+    & a {
+        margin: 50px 10px;
+
+        &:hover,
+        &:focus {
+            background-color: $primaryWhite;
+            box-shadow: 0 0 15px $textGrey;
+            color: $primaryBlack;
+        }
+    }
+}
+
+    // MISSION MEDIA QUERIES
+    @include max-width($tablet-large) {
+        
+    }
+
+    @include max-width($tablet-small) {
+        
+    }
+
+    @include max-width($mobile) {
+        
+    }
+/* END OF MISSION */
+
+
+/* CONTACT FORM */
+.contact {
+    background: url(../assets/image-3.jpeg);
+    background-size: cover;
+
+    & h2:before {
+        @include verticalDash($primaryWhite);
+    }
+
+    & p {
+        @include cursive;
+    }
+    
+    &-form {
+        @include flex(center, center);
+        flex-wrap: wrap;
+        margin-top: 80px;
+
+        &-item {
+            width: calc(50% - 4%);
+            margin: 20px 2%;
+            background-color: rgba($primaryBlack, 0.7);
+            border-radius: 25px;
+            border: 1px solid transparent;
+            padding: 10px 15px;
+            text-align: left;
+            color: inherit;
+
+            &:focus-within {
+                // on focus the field border turns pink
+                border: 1px solid $primaryColor;
+            } 
+        }
+
+        &-select {
+            -moz-appearance: none;
+            -webkit-appearance: none;
+            appearance: none;
+            //replaces default arrow with a pink arrow down
+            background-image: url(../assets/Icons/211614-20.png);
+            background-position: center right;
+            background-repeat: no-repeat;
+            text-transform: capitalize;
+            
+            & option {
+                background: $primaryBlack;
+                
+            }
+        }
+
+        &-field {
+            @include flex(flex-start, center);
+        }
+
+        &-label{
+            flex-grow: 1;
+        }
+
+        &-input {
+            background: transparent;
+            color: inherit;
+            border: none;
+            /* for testing */
+            /* border: 1px solid white; */
+            flex-grow: 2;
+        }
+
+        &-send {
+            margin: 20px auto;
+        }
+    }
+}
+
+    // CONTACT MEDIA QUERIES
+    @include max-width($tablet-large) {
+        
+    }
+
+    @include max-width($tablet-small) {
+        
+    }
+
+    @include max-width($mobile) {
+        .contact {
+            &-form {
+                flex-direction: column;
+                
+                &-item {
+                    width: 100%;
+                }
+            }
+
+            
+        }
+    }
+/* END OF CONTACT FORM */
+
+
+/* PROJECTS */
+.projects {
+    text-align: center;
+
+    & h2:before {
+        @include verticalDash($primaryBlack);
+    }
+
+    &-tabs {
+        @include flex(space-evenly, center);
+        margin: 30px auto;
+    }   
+
+    &-pink-tab {
+        text-transform: uppercase;
+        @include rounded-button(transparent, $textGrey, $primaryColor);
+        font-size: 1.5rem;
+
+        &:hover,
+        &:focus {
+            color: white;
+            box-shadow: 0 0 15px #444;
+        }
+    }
+
+    &-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        &-item {
+            // portrait ratio photos
+            position: relative;
+            width: 20%;
+
+            &.wide {
+                // landscape ratio photos
+                width: 40%;
+            }
+
+            //on hover over a photo the overlay with text appears
+            &:hover .projects-gallery-overlay {
+                opacity: 0.8;
+            }
+        }
+
+
+        // overlay's styles
+        &-overlay {
+            position: absolute;
+            top: 0;
+            padding: 10px;
+            @include flex(center, center);
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            // background: $primaryColor;
+            color: $primaryWhite;
+            opacity: 0;
+
+            // overlay tiles can have one of the three bg colors 
+            &.pink{
+                background-color: $primaryColor;
+            }
+
+            &.blue {
+                background-color: $secondAccentColor;
+            }
+
+            &.purple {
+                background-color: $firstAccentColor;
+            }
+
+            // overriding p styles for .white-bg (otherwise the text is grey)
+            & p {
+                color: inherit;
+                @include cursive;
+            }
+
+            & h5 {
+                margin: 10px 0;
+            }
+        }
+    }
+}
+
+    // PROJECTS MEDIA QUERIES
+    @include max-width($tablet-large) {
+        
+    }
+
+    @include max-width($tablet-small) {
+        .projects {
+
+            &-gallery {
+                // on smaller screen the photos turn into colorful tiles  - not the best looking solution, will work on it later
+
+                &-item,
+                .wide {
+                    width: 50%;
+                }
+
+                &-item:hover .projects-gallery-overlay {
+                    opacity: 1;
+                }
+
+                &-overlay {
+                    opacity: 1;
+                }
+
+                // & .wide img{
+                //     height: 100%;
+                //     object-fit: cover;
+                // }
+            }
+        }
+    }
+
+    @include max-width($mobile) {
+        .projects {
+            &-tabs {
+                flex-direction: column;
+            }
+
+            &-pink-tab {
+                margin: 10px auto;
+            }
+
+            &-gallery {
+
+                &-item,
+                .wide {
+                    width: 100%;
+                }
+            }
+        }
+    }
+/* END OF PROJECTS */
+
+
+
+/****************
+** END OF MAIN **
+****************/

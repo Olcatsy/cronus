@@ -1,0 +1,314 @@
+/***********
+** HEADER **
+***********/
+
+.header {
+    color: $primaryWhite;
+    position: relative;
+
+    /* Top Header */
+    &-top {
+        @include flex(space-between, center);
+        padding: 25px;
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10;
+    }
+
+    &-logo {
+        transition: $allEase;
+
+        // the logo grows a bit when hovered over
+        &:hover,
+        &:focus {
+            transform: scale(1.2);
+        }
+    }
+
+    // Nav
+    &-nav {
+    width: 50%;
+    text-transform: capitalize;
+
+        & ul {
+            max-width: 100%;
+            @include flex(space-evenly, center);
+        }
+
+        & a {
+            position: relative;
+            transition: $allEase;
+            // transition ISNT WORKING FOR SOME REASON
+
+            // wnen an anchor is hovered over a line appears on top of it
+            &:hover::before,
+            &:focus::before {
+                opacity: 100;
+            }
+        }
+
+        & a::before {
+            @include verticalDash($primaryWhite);
+            margin: 0;
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            opacity: 0;
+        }
+
+        // hamburger menu
+        &-hamburger {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            width: 50px;
+            cursor: pointer;
+            display: none;
+
+            & i {
+                font-size: 2.5rem;
+            }
+        }
+        &-close {
+            display: none;
+            font-size: 2.5rem;
+            margin-top: 20px;
+            padding: 15px;
+
+            &:active {
+                transform: scale(1.2);
+            }
+        }
+
+    }
+    // End of Nav
+
+    // Misc - search and language
+    &-misc {
+        @include flex(space-evenly, center);
+
+    }
+
+    &-language {
+        display: flex;
+        margin-left: 15px;
+
+        & * {
+            margin: 0 3px;
+        }
+
+        & img {
+            height: 20px;
+            border: 1px solid white;
+            border-radius: 50%;
+        }
+    }
+    // End of Misc
+    /* End of Top Header */
+
+    /* Hero */
+    &-hero {
+        height: 100vh;
+        background-image: linear-gradient(to top right, rgba($secondAccentColor, 0.7), rgba($primaryColor, 0.7)), url(../assets/image-1.jpeg);
+        background-size: cover;
+        position: relative;
+        @include flex(center, center);
+
+        & h1 {
+            margin: 10px 0;
+        }
+
+        & h2 {
+            color: $primaryWhite;
+        }
+
+        & a {
+            margin: $buttonMargin;
+        }
+
+        & .wrapper {
+            position: relative;
+        }
+
+        // side info - rotated and placed on the left
+        &-info {
+            transform: rotate(-90deg);
+            position: absolute;
+            left: -45px;
+        }
+
+        // swipe flourish - rotated and placed at the bottom
+        &-swipe {
+            font-size: 1.2rem;
+            opacity: 0.7;
+            position: absolute;
+            bottom: 0;
+            transform: rotate(-90deg);
+            transform-origin: left;
+            left: 50%;
+
+            & p {
+                display: inline-block;
+                text-transform: uppercase;
+            }
+
+            & i {
+                font-size: 1rem;
+            }
+
+            & p, & i {
+                margin: 1px;
+            }
+        }
+
+        // carousel indicators
+        &-carousel {
+            position: absolute;
+            right: 0;
+
+            & p {
+                padding: 3px 25px;
+                position: relative;
+                cursor: pointer;
+                transition: $allEase;
+
+                // on hover a diagonal line crosses out the number
+                &::before {
+                    content: "";
+                    width: 1px;
+                    height: 26px;
+                    background: white;
+                    display: block;
+                    transform: rotate(54deg);
+                    position: absolute;
+                    left: 50%;
+                    top: 0;
+                    opacity: 0;
+                }
+
+                &:hover::before {
+                    opacity: 1;
+                    
+                }
+            }
+        }
+    }
+    /* End of Hero */
+}
+/******************
+** END OF HEADER **
+*******************/
+
+// MEDIA QUERIES 
+    @include max-width($tablet-large) {
+        .header {
+
+            // header top
+            &-top {
+                flex-direction: column;
+            }
+
+            &-logo {
+                width: 100%;
+                text-align: center;
+            }
+
+            &-nav {
+                margin: 25px 0;
+                width: 100%;
+
+                & a {
+                    padding: 0px 20px;
+                }
+            }
+
+            &-misc {
+                position: absolute;
+                right: 25px;
+                top: 25px;
+            }
+            // end of header top
+
+            // hero
+            &-hero {
+                padding-top: 25%;
+
+                &-swipe {
+                    display: none;
+                }
+            }
+            // end of hero
+
+        }
+    }
+
+    @include max-width($tablet-small) {
+        .header {
+
+            &-nav {
+
+                &-hamburger {
+                    display: block;
+                }
+
+                &-close {
+                    display: block;
+
+                }
+
+                & ul {
+                    // on mobile the menu takes up the whole screen when hamburger icon is clicked
+                   background-image: linear-gradient(to top right, $primaryColor, $secondAccentColor);
+                   position: fixed;
+                   top: 0;
+                   bottom: 0;
+                   width: 100%;
+                   left: -100%;
+                   flex-direction: column; 
+                   font-size: 2rem;
+                   justify-content: center;
+                   transition: all 0.4s ease-in;
+                }
+
+                .open {
+                    left: 0;
+                }
+
+                & a {
+                    padding: 20px;
+
+                    &:active {
+                        // on click the button gets a border and grows a little
+                        transform: scale(1.2);
+                        border: 1px solid $primaryWhite;
+                        border-radius: 30px;
+                    }
+
+                    &:hover::before,
+                    &:focus::before,
+                    &:active::before{
+                        display: none;
+                    }
+                }
+
+            }
+
+            &-hero {
+
+                &-info,
+                &-carousel {
+                    display: none;
+                }
+            }
+        }
+    }
+
+    @include max-width($mobile) {
+        .header {
+           
+        }
+    }
+

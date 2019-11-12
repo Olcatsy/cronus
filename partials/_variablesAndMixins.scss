@@ -1,0 +1,85 @@
+/* Colours
+Purple #6e45e2 rgb(110, 69, 226)
+Pink #ed145b   rgb(237, 20, 91)
+Blue #0d4ef7   rgb(13, 78, 247)
+Black #171717  rgb(23, 23, 23)
+Grey #f1f8fc   rgb(241, 248, 252)  */
+
+/* fonts
+Nunito (Google Fonts)
+Libre Baskerville (Google Fonts)
+ */
+
+ //COLOUR VARIABLES
+ $primaryColor: rgb(237, 20, 91);
+ $firstAccentColor: rgb(110, 69, 226);
+ $secondAccentColor: rgb(13, 78, 247);
+ $primaryBlack: rgb(23, 23, 23);
+ $primaryWhite: rgb(255, 255, 255);
+ $textGrey: #666;
+
+ //padding
+ $footerPadding: 5px;
+
+//  animation transition
+$allEase: all 0.3s ease;
+
+// button margin
+$buttonMargin: 50px 0;
+
+//media variables 
+$mobile: 480px;
+$tablet-small: 768px;
+$tablet-large: 1024px;
+
+
+//  cursive typography style
+ @mixin cursive {
+    font-family: "Libre Baskerville", serif;
+    font-style: italic;
+    font-weight: normal;
+    letter-spacing: 1px;
+ }
+
+//  button with rounded corners
+ @mixin rounded-button($bgColor, $textColor, $hoverColor) {
+    background-color: $bgColor;
+    color: $textColor;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    border-radius: 30px;
+    transition: $allEase;
+
+    &:hover,
+    &:focus {
+            background-color: $hoverColor;
+    }
+ }
+
+//  flexbox 
+ @mixin flex ($justifyContent, $alignItems) {
+     display: flex;
+     justify-content: $justifyContent;
+     align-items: $alignItems;
+ }
+
+//  vertical dash at the top of every section
+@mixin verticalDash($color) {
+    content: "";
+    height: 30px;
+    width: 1px;
+    background-color: $color;
+    display: block;
+    margin: 15px auto;
+}
+
+// media query
+@mixin max-width($breakpoint) {
+    @media (max-width: $breakpoint) {
+      @content;
+    }
+  }
+
+
+
+ 

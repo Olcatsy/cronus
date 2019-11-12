@@ -1,0 +1,60 @@
+/***********
+** HEADER **
+***********/
+header {
+  color: white; }
+
+/* Top Header */
+.header-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 25px;
+  height: 95px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0; }
+
+.nav {
+  width: 50%;
+  text-transform: capitalize; }
+  .nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    max-width: 100%;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly; }
+
+/* End of Top Header */
+/* Hero */
+.hero {
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left bottom, right top, from(rgba(13, 78, 247, 0.7)), to(rgba(237, 20, 91, 0.7))), url(../assets/image-1.jpeg);
+  background-image: -webkit-linear-gradient(bottom left, rgba(13, 78, 247, 0.7), rgba(237, 20, 91, 0.7)), url(../assets/image-1.jpeg);
+  background-image: -o-linear-gradient(bottom left, rgba(13, 78, 247, 0.7), rgba(237, 20, 91, 0.7)), url(../assets/image-1.jpeg);
+  background-image: linear-gradient(to top right, rgba(13, 78, 247, 0.7), rgba(237, 20, 91, 0.7)), url(../assets/image-1.jpeg);
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+/* End of Hero */
+/******************
+** END OF HEADER **
+*******************/

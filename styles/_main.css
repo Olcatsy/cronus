@@ -1,0 +1,192 @@
+/*********
+** MAIN **
+*********/
+main h2 {
+  margin: 50px auto 10px; }
+
+/* the vertical dash at the top of every section */
+main h2:before {
+  content: "";
+  height: 30px;
+  width: 2px;
+  background-color: white;
+  display: block;
+  margin: 15px auto; }
+
+section {
+  padding: 100px 0; }
+
+/* FEATURED */
+.featured {
+  background: #ed145b;
+  text-align: center;
+  padding-bottom: 250px; }
+
+.featured .flex-parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly; }
+
+.featured-item {
+  width: calc(33% - 4%);
+  margin: 2%; }
+
+.featured .icon {
+  margin: 0 auto; }
+
+/* END OF FEATURED */
+/* MISSION */
+.mission h2:before {
+  background-color: black; }
+
+.mission .inner-wrapper {
+  /* places the image/video between two sections */
+  margin-top: -25%; }
+
+.mission img {
+  -webkit-box-shadow: 0 0 45px #444;
+  box-shadow: 0 0 45px #444; }
+
+.mission p {
+  text-align: justify; }
+
+/* END OF MISSION */
+/* CONTACT FORM */
+.contact {
+  background: url(../assets/image-3.jpeg); }
+
+.contact-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.contact .form-item {
+  width: calc(50% - 2%);
+  margin: 10px 1%;
+  background-color: rgba(23, 23, 23, 0.7);
+  /* background-size: cover;
+    background-position: center; */
+  border-radius: 10px;
+  border: 1px solid transparent;
+  padding: 5px 10px;
+  text-align: left;
+  color: inherit; }
+
+.contact-form select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-image: url(../assets/Icons/211614-20.png);
+  background-position: center right;
+  background-repeat: no-repeat; }
+
+.contact .form-item:focus-within {
+  border: 1px solid #ed145b; }
+
+.contact .form-field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+
+.contact .form-field label {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1; }
+
+.contact .form-field input {
+  background: transparent;
+  color: inherit;
+  border: none;
+  /* for testing */
+  /* border: 1px solid white; */
+  -webkit-box-flex: 2;
+  -ms-flex-positive: 2;
+  flex-grow: 2; }
+
+/* END OF CONTACT FORM */
+/* PROJECTS */
+.projects {
+  text-align: center; }
+
+.projects .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly; }
+
+.projects .pink-tab {
+  text-transform: uppercase;
+  padding: 10px 30px;
+  background: transparent;
+  color: #555;
+  font-size: 1.5rem; }
+
+/* this is hover style */
+.projects .pink-tab:hover {
+  background: #ed145b;
+  color: white;
+  border-radius: 30px;
+  -webkit-box-shadow: 0 0 15px #444;
+  box-shadow: 0 0 15px #444; }
+
+.projects .gallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  width: 100%; }
+
+.projects .gallery-item {
+  position: relative;
+  width: 20%; }
+
+.projects .gallery-item.wide {
+  width: 40%; }
+
+/* when a photo is hovered a pink overlay with text appears */
+.projects .overlay {
+  position: absolute;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background: #ed145b;
+  color: white;
+  opacity: 0; }
+
+.projects .overlay p {
+  color: inherit; }
+
+.projects .gallery-item:hover .overlay {
+  opacity: 0.8; }
+
+/* END OF PROJECTS */
+/****************
+** END OF MAIN **
+****************/

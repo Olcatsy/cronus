@@ -1,0 +1,123 @@
+/* BASE AND STRIPPING STYLES */
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Nunito", sans-serif;
+    position: relative;
+    color: $primaryWhite;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    // font-size: 7rem;
+    font-size: calc(6rem + 1vw);
+    font-weight: 800;
+}
+
+h2 {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    letter-spacing: 1px;
+    color: $primaryColor; 
+}
+
+h3 {
+    font-size: calc(4rem + 0.5vw);
+}
+
+h4 {
+    text-transform: capitalize;
+    font-size: 2rem;
+}
+
+h5 {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    border: none;
+}
+/* END OF BASE AND STRIPPING STYLES */
+
+
+/* COMMON STYLES */
+.wrapper {
+    width: 75%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.inner-wrapper {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* cursive spans in headers */
+.cursive {
+    @include cursive;
+}
+
+// purple button - TURN INTO MIXIN
+.purple-button {
+    @include rounded-button($firstAccentColor, $primaryWhite, $primaryColor)
+}
+
+/* font color rules for sections with white background (the base font color is white)*/
+.white-bg {
+    color: $primaryBlack;
+    
+    & p {
+            color: $textGrey;
+        }
+}
+/* END OF COMMON STYLES */
+
+// MEDIA QUERIES 
+    @include max-width($tablet-large) {
+        .inner-wrapper {
+            width: 100%;
+        }
+    }
+
+    @include max-width($tablet-small) {
+        .wrapper {
+            width: 100%;
+            padding: 0 20px;
+        }
+    }
+
+    @include max-width($mobile) {
+
+    }

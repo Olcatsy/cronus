@@ -1,0 +1,92 @@
+/* BASE AND STRIPPING STYLES */
+html {
+  font-size: 62.5%; }
+
+body {
+  font-size: 1.6rem;
+  font-family: "Nunito", sans-serif;
+  position: relative;
+  color: white; }
+
+body,
+h1,
+h2,
+h3,
+ul,
+p {
+  margin: 0;
+  padding: 0; }
+
+h1 {
+  font-size: 7rem;
+  font-weight: 800; }
+
+h2 {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  letter-spacing: 1px;
+  color: #ed145b; }
+
+/* there are two sections where h2 is white instead of pink */
+.hero h2,
+.featured h2 {
+  color: white; }
+
+h3 {
+  font-size: 4rem; }
+
+h4 {
+  text-transform: capitalize;
+  font-size: 2rem; }
+
+ul {
+  list-style: none; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; }
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit; }
+
+button {
+  border: none; }
+
+/* END OF BASE AND STRIPPING STYLES */
+/* COMMON STYLES */
+.wrapper {
+  width: 75%;
+  max-width: 1200px;
+  margin: 0 auto; }
+
+.inner-wrapper {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center; }
+
+/* cursive spans in headers */
+.cursive {
+  font-family: "Libre Baskerville", serif;
+  font-style: italic;
+  font-weight: normal; }
+
+.purple-button {
+  background-color: #6e45e2;
+  color: white;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  border-radius: 30px; }
+  .purple-button:hover, .purple-button:focus {
+    background-color: #ed145b; }
+
+/* font color rules for sections with white background (the base font color is white)*/
+.white-bg {
+  color: #171717; }
+  .white-bg p {
+    color: #555; }
+
+/* END OF COMMON STYLES */
